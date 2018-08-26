@@ -67,6 +67,23 @@ table(SwansData$sex, SwansData$age)
 # 10. which of the variables are normally distributed? Answer this question by
 # creating and interpreting a ni=ormal probability plots.
 
+#normal probability plots are graphical method of checking for the normality of a distribution. 
+#The normality of a distribution is indicated by how linear the line is
+
+qqnorm(SwansData$circum)
+#Almost linear line - circum variable has normally distributed values
+
+qqnorm(SwansData$weight)
+#Linear line - weight variable has normally distributed values
+
+qqnorm(SwansData$wingspan)
+#Not a linear line - hence wingspan values are not normallly distributed
+
+qqnorm(SwansData$cwidth)
+#Not a linear line - hence width values are not normally distributed
+
+qqnorm(SwansData$cheight)
+#Not a linear line - hence height values are not normally distributed
 
 
 
@@ -74,12 +91,13 @@ table(SwansData$sex, SwansData$age)
 
 # 11. create stem-and-leaf plot for weight:
 
-
+stem(SwansData$weight)
+#From the below stem-and-leaf plot, we can see that most weight values lie between 65-70
 
 
 
 # 12. create histograms for each variable. what does parameter "breaks" do to the histogram?
-
+hist(SwansData$weight, breaks = 2)
 
 
 
