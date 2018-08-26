@@ -31,41 +31,42 @@ SwansDataCopy = SwansData
 
 
 # 4. take log of cheight column and add it to the copy of swans:
-
+swans$cheight = log(SwansData$cheight)
 
 
 
 # 5. compute summary statistics:min, 1st quartile, mean, median, 3rd quartile, max, 
 # variance, standard deviation
-
+summary(SwansData)
 
 
 
 # 6. compute a COVARIANCE matrix 
-
-
-
+covmatrix = cov(SwansData[,-8], swans[,-8])
 
 
 # 7. compute a CORRELATION matrix:
-
-
-
+cormatrix  = cor(SwansData[,-8], swans[,-8])
 
 
 # 8. compute means, variances and standard deviations of the columns and store
 # teh results in a matrix with properly labeled rows and columns
-
+meanlist = colMeans(cormatrix[,1:7])
+variancelist = apply(cormatrix[,1:7], MARGIN = 2, FUN = var)
+stdDevlist = apply(cormatrix[,1:7], MARGIN = 2, FUN = sd)
 
 
 
 # 9. summarize sex and age using table function: indiviaually and simultaneously:
+table(SwansData$sex)
+table(SwansData$age)
+table(SwansData$sex, SwansData$age)
 
 
 
-
-# 10. which of the variabbles are normally distributed? Answer this question by
+# 10. which of the variables are normally distributed? Answer this question by
 # creating and interpreting a ni=ormal probability plots.
+
 
 
 
