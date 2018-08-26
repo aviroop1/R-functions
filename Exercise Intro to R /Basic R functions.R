@@ -1,27 +1,32 @@
 
 # 1. read in the data from the file "swans.dat"
-
+SwansData = read.table('swans.dat', header = TRUE)
 
 
 #2. subset it using
 
   # a. the second row
+SwansDataSubseta = SwansData[2,]
 
   # b. the third column
+SwansDataSubsetb = SwansData[,3]
 
   # c. the entry in the second row and third column
+SwansDataSubsetc = SwansData[2,3]
 
   # d. all swans with 6th col==1
+SwansDataSubsetd = SwansData[SwansData[,6] == 1,]
 
   # e. all female swans
+SwansDataSubsete = SwansData[SwansData$sex == 'F',]
 
   # f. all swans weighing more than 10 kg
-
+SwansDataSubsetf = SwansData[SwansData$weight > 10, ]
 
 
 
 # 3. make a copy swans:
-
+SwansDataCopy = SwansData
 
 
 
